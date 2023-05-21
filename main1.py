@@ -9,7 +9,7 @@ PAGE_CONFIG = {"page_title": "Predict Your Weekly Weight",
 st.set_page_config(**PAGE_CONFIG)
 
 def showGraphList():
-    graph = ["Prediction"]
+    graph = ["Prediction","Slider"]
     opt = st.radio("Prediction", graph)
     return opt
 
@@ -77,7 +77,7 @@ def mainContent():
         # d_final['Date'] = pd.to_datetime(d_final['Date']).dt.date
         col_list = data.weight.values.tolist()
         d_final['Estimated Weight'] = col_list
-        st.write(d_final)
+        # st.write(d_final)
         df_graph = df_o[0:4] # for line chart
 
         if opt == "Prediction":
@@ -87,10 +87,40 @@ def mainContent():
             top_5_features = sorted_coeffs.index[1:6]
             for i in top_5_features:
                 st.write(i)
-            st.header("Relationship between Weight and Menstrual Cycle Day")
+            # st.header("Relationship between Weight and Menstrual Cycle Day")
             fig = px.line(df_graph, y = "Menstrual cycle day", x = "Avg weight")
-            st.plotly_chart(fig)
+            # st.plotly_chart(fig)
+        elif opt =="Slider":
             
+            corr_coeffs = corr.corr()['Avg weight']
+            corr_coeffs = corr_coeffs.to_frame()
+
+            st.write(corr_coeffs)
+            w = st.number_input("Enter Your Weight below")
+            
+            stress_cor = corr_coeffs.at["Stress level", "Avg weight"]
+            step_cor = corr_coeffs.at["Avg steps", "Avg weight"]
+            sleep_cor = corr_coeffs.at["Sleep hours", "Avg weight"]
+            calorie_cor = corr_coeffs.at["Avg calorie", "Avg weight"]
+
+            w1 = w+(w*stress_cor)
+            w2 = w+(w*step_cor)
+            w3 = w+(w*sleep_cor)
+            w4 = w+(w*calorie_cor)
+            stress= st.slider('Stress Level', 0, 100, 0)
+            w1 = w+w*((stress_cor+(stress*0.001)))
+            st.write("New Weight : ", w1)
+            Steps = st.slider('Steps', 0, 100, 0)
+            w2 = w+w*((step_cor+(Steps*0.01)))
+            st.write("New Weight : ", w2)
+            sleep= st.slider('Sleep', 0, 100, 0)
+            w3 = w+w*((sleep_cor+(sleep*0.01)))
+
+            st.write("New Weight : ", w3)
+            
+            Calorie= st.slider('Calorie', 0, 100, 0)
+            w4 = w+w*((calorie_cor+(Calorie*0.01)))
+            st.write("New Weight : ", w4)
         else:
             st.write("There is nothing to show!! Please add file to see data.")
 

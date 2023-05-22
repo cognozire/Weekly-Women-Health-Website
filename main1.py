@@ -11,7 +11,7 @@ st.set_page_config(**PAGE_CONFIG)
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
-background-image: url("https://static.vecteezy.com/system/resources/thumbnails/011/467/891/small_2x/breast-cancer-awareness-month-pink-ribbon-and-stethoscope-on-colored-background-women-s-health-care-concept-symbol-of-fight-against-oncology-photo.jpg");
+background-image: url("https://ocr.seattle.gov/wp-content/uploads/sites/18/2021/05/shutterstock_1709817853-Converted-scaled.jpg");
 background-size: cover;
 background-position: top left;
 background-repeat: no-repeat;

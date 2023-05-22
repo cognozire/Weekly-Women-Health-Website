@@ -159,5 +159,5 @@ if __name__ == "__main__":
     # background-color: #f5f5f5;
     st.markdown(footer, unsafe_allow_html=True)
     sidebar()
-    st.markdown("<h1 style='text-align: center; color: black;'>Women Weekly Health Check Website</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: black;'>Women Weekly Health Check</h1>", unsafe_allow_html=True)
     mainContent()

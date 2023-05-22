@@ -36,7 +36,6 @@ def sidebar():
 
 def mainContent():
     if df1 is not None:
-        st.header("Weight Trend")
         df_o = df1
         df_o = df_o.drop(['Actual User ID'], axis = 1)
         bool_cols = [col for col in df_o.columns if df_o[col].dtype == 'bool' or df_o[col].dtype =='object']
@@ -82,6 +81,7 @@ def mainContent():
 
         if opt == "Prediction":
             corr_coeffs = corr.corr()['Avg weight']
+            st.header("Weight Trend")
             st.write(d_final)
             st.header("Top 5 features contributing to your weight are:")
             sorted_coeffs = corr_coeffs.abs().sort_values(ascending=False)
@@ -98,7 +98,7 @@ def mainContent():
             
 
 #             st.write(corr_coeffs)
-            w = st.number_input("Enter Your Weight below")
+            w = st.number_input("Enter your weight here:")
             
             stress_cor = corr_coeffs.at["Stress level", "Avg weight"]
             step_cor = corr_coeffs.at["Avg steps", "Avg weight"]

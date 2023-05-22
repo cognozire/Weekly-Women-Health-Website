@@ -35,7 +35,7 @@ def sidebar():
                 st.write("File Format is not supported")
 
 def mainContent():
-    st.header("Weight Trend")
+#     st.header("Weight Trend")
     if df1 is not None:
         df_o = df1
         df_o = df_o.drop(['Actual User ID'], axis = 1)

@@ -105,28 +105,28 @@ def mainContent():
             
             stress = st.slider('Stress Level', 0, 100, 0)
 #             w1 = w+w*((stress_cor+(stress*0.001)))
-            del_w1 = abs(stress_cor)*w
-            w_adj1 = (stress-100)/100
+            del_w1 = stress_cor*w
+            w_adj1 = (stress-50)/50
             w1 = w + (w_adj1*del_w1)
             st.write("New Weight : ", 0 if stress == 0 else w1)
   
             steps = st.slider('Steps', 0, 100, 0)
 #             w2 = w+w*((step_cor+(Steps*0.01)))
-            del_w2 = abs(step_cor)*w
-            w_adj2 = (steps-100)/100
-            w2 = w + (abs(w_adj2)*del_w2)
+            del_w2 = step_cor*w
+            w_adj2 = (steps-50)/50
+            w2 = w + (w_adj2*del_w2)
             st.write("New Weight : ", 0 if steps == 0 else w2)
   
             sleep = st.slider('Sleep', 0, 100, 0)
 #             w3 = w+w*((sleep_cor+(sleep*0.01)))
-            del_w3 = abs(sleep_cor)*w
+            del_w3 = sleep_cor*w
             w_adj3 = (sleep-50)/50
-            w3 = w + (abs(w_adj3)*del_w3)
+            w3 = w + (w_adj3*del_w3)
             st.write("New Weight : ", 0 if sleep == 0 else w3)
   
             calorie = st.slider('Calorie', 0, 100, 0)
 #             w4 = w+w*((calorie_cor+(Calorie*0.01)))
-            del_w4 = abs(calorie_cor)*w
+            del_w4 = calorie_cor*w
             w_adj4 = (calorie-50)/50
             w4 = w + (w_adj4*del_w4)
             st.write("New Weight : ", 0 if calorie == 0 else w4)

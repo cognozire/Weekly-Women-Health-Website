@@ -8,6 +8,16 @@ PAGE_CONFIG = {"page_title": "Predict Your Weekly Weight",
                "page_icon": "chart_with_upwards_trend:", "layout": "centered"}
 st.set_page_config(**PAGE_CONFIG)
 
+page_bg_img = '''
+<style>
+body {
+background-image: url("https://thumbs.dreamstime.com/b/women-s-health-issues-medical-concept-venus-sign-stethoscope-pink-background-top-down-women-s-health-issues-medical-176227565.jpg");
+background-size: cover;
+}
+</style>
+'''
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
 def showGraphList():
     graph = ["Prediction","Slider"]
     opt = st.radio("Prediction", graph)
@@ -135,15 +145,6 @@ def mainContent():
             st.write("There is nothing to show!! Please add file to see data.")
 
 if __name__ == "__main__":
-    page_bg_img = '''
-    <style>
-    body {
-    background-image: url("https://thumbs.dreamstime.com/b/women-s-health-issues-medical-concept-venus-sign-stethoscope-pink-background-top-down-women-s-health-issues-medical-176227565.jpg");
-    background-size: cover;
-    }
-    </style>
-    '''
-    st.markdown(page_bg_img, unsafe_allow_html=True)
     
     footer = """
     <div style='position: fixed; bottom: 0; width: 100%; background-color: #f5f5f5; text-align: center; font-size: 12px;'>

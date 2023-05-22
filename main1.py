@@ -11,7 +11,7 @@ st.set_page_config(**PAGE_CONFIG)
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
-background-image: url("https://thumbs.dreamstime.com/b/women-s-health-issues-medical-concept-venus-sign-stethoscope-pink-background-top-down-women-s-health-issues-medical-176227565.jpg");
+background-image: url("https://img.freepik.com/premium-photo/pink-ribbons-stethoscope-pastel-background-symbol-womens-breast-cancer-awareness_53476-6136.jpg");
 background-size: cover;
 background-position: top left;
 background-repeat: no-repeat;

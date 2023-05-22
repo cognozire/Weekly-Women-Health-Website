@@ -136,13 +136,13 @@ def mainContent():
 
 if __name__ == "__main__":
     st.markdown(
-   f”””
+   f"""
    <style>
    p {
    background-image: url('https://thumbs.dreamstime.com/b/women-s-health-issues-medical-concept-venus-sign-stethoscope-pink-background-top-down-women-s-health-issues-medical-176227565.jpg');
    }
    </style>
-   ”””,
+   """,
    unsafe_allow_html=True)
     footer = """
     <div style='position: fixed; bottom: 0; width: 100%; background-color: #f5f5f5; text-align: center; font-size: 12px;'>

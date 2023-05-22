@@ -35,8 +35,9 @@ def sidebar():
                 st.write("File Format is not supported")
 
 def mainContent():
-#     st.header("Weight Trend")
+    st.header("Welcome to Women Weekly Health Check Website!")
     if df1 is not None:
+        st.header("Weight Trend")
         df_o = df1
         df_o = df_o.drop(['Actual User ID'], axis = 1)
         bool_cols = [col for col in df_o.columns if df_o[col].dtype == 'bool' or df_o[col].dtype =='object']

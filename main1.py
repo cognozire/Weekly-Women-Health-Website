@@ -11,7 +11,7 @@ st.set_page_config(**PAGE_CONFIG)
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
-background-image: url("https://ocr.seattle.gov/wp-content/uploads/sites/18/2021/05/shutterstock_1709817853-Converted-scaled.jpg");
+background-image: url("https://www.shutterstock.com/shutterstock/videos/15232945/thumb/1.jpg");
 background-size: cover;
 background-position: top left;
 background-repeat: no-repeat;

@@ -11,7 +11,7 @@ st.set_page_config(**PAGE_CONFIG)
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
-background-image: url("https://img.freepik.com/premium-vector/abstract-network-digital-banner-modern-black-white-line-graphic-technology-background-wallpaper-presentation-vector-illustration_62391-465.jpg?w=2000");
+background-image: url("https://static.vecteezy.com/system/resources/thumbnails/011/467/891/small_2x/breast-cancer-awareness-month-pink-ribbon-and-stethoscope-on-colored-background-women-s-health-care-concept-symbol-of-fight-against-oncology-photo.jpg");
 background-size: cover;
 background-position: top left;
 background-repeat: no-repeat;

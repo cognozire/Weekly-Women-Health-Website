@@ -35,7 +35,6 @@ def sidebar():
                 st.write("File Format is not supported")
 
 def mainContent():
-    st.header("Welcome to Women Weekly Health Check Website!")
     if df1 is not None:
         st.header("Weight Trend")
         df_o = df1
@@ -82,9 +81,9 @@ def mainContent():
         df_graph = df_o[0:4] # for line chart
 
         if opt == "Prediction":
-            st.header("Top 5 features contributing to your weight are:")
             corr_coeffs = corr.corr()['Avg weight']
             st.write(d_final)
+            st.header("Top 5 features contributing to your weight are:")
             sorted_coeffs = corr_coeffs.abs().sort_values(ascending=False)
             top_5_features = sorted_coeffs.index[1:6]
             for i in top_5_features:
@@ -135,4 +134,5 @@ if __name__ == "__main__":
     """
     st.markdown(footer, unsafe_allow_html=True)
     sidebar()
+    st.header("Welcome to Women Weekly Health Check Website!")
     mainContent()

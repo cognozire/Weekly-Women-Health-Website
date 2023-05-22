@@ -83,6 +83,7 @@ def mainContent():
         if opt == "Prediction":
             st.header("Top 5 features contributing to your weight are:")
             corr_coeffs = corr.corr()['Avg weight']
+            st.write(d_final)
             sorted_coeffs = corr_coeffs.abs().sort_values(ascending=False)
             top_5_features = sorted_coeffs.index[1:6]
             for i in top_5_features:
@@ -94,7 +95,7 @@ def mainContent():
             
             corr_coeffs = corr.corr()['Avg weight']
             corr_coeffs = corr_coeffs.to_frame()
-            st.write(d_final)
+            
 
 #             st.write(corr_coeffs)
             w = st.number_input("Enter Your Weight below")

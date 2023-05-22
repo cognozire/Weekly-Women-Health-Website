@@ -106,14 +106,14 @@ def mainContent():
             stress = st.slider('Stress Level', 0, 100, 0)
 #             w1 = w+w*((stress_cor+(stress*0.001)))
             del_w1 = abs(stress_cor)*w
-            w_adj1 = (stress-50)/50
+            w_adj1 = (stress-100)/100
             w1 = w + (abs(w_adj1)*del_w1)
             st.write("New Weight : ", 0 if stress == 0 else w1)
   
             steps = st.slider('Steps', 0, 100, 0)
 #             w2 = w+w*((step_cor+(Steps*0.01)))
             del_w2 = abs(step_cor)*w
-            w_adj2 = (steps-50)/50
+            w_adj2 = (steps-100)/100
             w2 = w + (abs(w_adj2)*del_w2)
             st.write("New Weight : ", 0 if steps == 0 else w2)
   

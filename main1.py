@@ -8,14 +8,19 @@ PAGE_CONFIG = {"page_title": "Predict Your Weekly Weight",
                "page_icon": "chart_with_upwards_trend:", "layout": "centered"}
 st.set_page_config(**PAGE_CONFIG)
 
-page_bg_img = '''
+page_bg_img = f"""
 <style>
-body {
-background-image: url("https://thumbs.dreamstime.com/b/women-s-health-issues-medical-concept-venus-sign-stethoscope-pink-background-top-down-women-s-health-issues-medical-176227565.jpg");
+[data-testid="stAppViewContainer"] > .main {{
+background-image: url("https://img.freepik.com/premium-vector/abstract-network-digital-banner-modern-black-white-line-graphic-technology-background-wallpaper-presentation-vector-illustration_62391-465.jpg?w=2000");
 background-size: cover;
-}
+background-position: top left;
+background-repeat: no-repeat;
+}}
+[data-testid="stHeader"] {{
+background: rgba(0,0,0,0);
+}}
 </style>
-'''
+"""
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
 def showGraphList():

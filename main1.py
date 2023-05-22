@@ -94,8 +94,9 @@ def mainContent():
             
             corr_coeffs = corr.corr()['Avg weight']
             corr_coeffs = corr_coeffs.to_frame()
+            st.write(d_final)
 
-            st.write(corr_coeffs)
+#             st.write(corr_coeffs)
             w = st.number_input("Enter Your Weight below")
             
             stress_cor = corr_coeffs.at["Stress level", "Avg weight"]

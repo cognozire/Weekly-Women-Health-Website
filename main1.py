@@ -92,7 +92,7 @@ def mainContent():
             fig = px.line(df_graph, y = "Menstrual cycle day", x = "Avg weight")
             # st.plotly_chart(fig)
             
-        elif opt =="Slider"
+        elif opt =="Slider":
             corr_coeffs = corr.corr()['Avg weight']
             corr_coeffs = corr_coeffs.to_frame()
 #             st.write(corr_coeffs)

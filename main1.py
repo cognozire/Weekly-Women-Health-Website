@@ -111,40 +111,70 @@ def mainContent():
             corr_coeffs = corr.corr()['Avg weight']
             corr_coeffs = corr_coeffs.to_frame()
 #             st.write(corr_coeffs)
-            w = st.number_input("Enter your weight here (lbs):")
+            avg_sleep  = df_o["Sleep hours"].mean()
+            avg_sleep = round(avg_sleep)
+            
+            avg_calorie = df_o["Avg calorie"].mean()
+            avg_calorie = round(avg_calorie)
+            avg_steps = df_o["Avg steps"].mean()
+            avg_steps = round(avg_steps)
+            avg_stress = df_o["Stress level"].mean()
+            avg_stress = round(avg_stress)
+            avg_weight = df_o["Avg weight"].mean()
             
             stress_cor = corr_coeffs.at["Stress level", "Avg weight"]
             step_cor = corr_coeffs.at["Avg steps", "Avg weight"]
             sleep_cor = corr_coeffs.at["Sleep hours", "Avg weight"]
             calorie_cor = corr_coeffs.at["Avg calorie", "Avg weight"]
-            
-            stress = st.slider('Stress Level (%)', 0, 100, 0)
-#             w1 = w+w*((stress_cor+(stress*0.001)))
-            del_w1 = stress_cor*w
-            w_adj1 = (stress-50)/50
-            w1 = w + (w_adj1*del_w1)
-            st.write("New Weight : ", 0 if stress == 0 else w1)
-  
-            steps = st.slider('Steps (%)', 0, 100, 0)
-#             w2 = w+w*((step_cor+(Steps*0.01)))
-            del_w2 = step_cor*w
-            w_adj2 = (steps-50)/50
-            w2 = w + (w_adj2*del_w2)
-            st.write("New Weight : ", 0 if steps == 0 else w2)
-  
-            sleep = st.slider('Sleep (%)', 0, 100, 0)
-#             w3 = w+w*((sleep_cor+(sleep*0.01)))
-            del_w3 = sleep_cor*w
-            w_adj3 = (sleep-50)/50
-            w3 = w + (w_adj3*del_w3)
-            st.write("New Weight : ", 0 if sleep == 0 else w3)
-  
-            calorie = st.slider('Calorie (%)', 0, 100, 0)
-#             w4 = w+w*((calorie_cor+(Calorie*0.01)))
-            del_w4 = calorie_cor*w
-            w_adj4 = (calorie-50)/50
-            w4 = w + (w_adj4*del_w4)
-            st.write("New Weight : ", 0 if calorie == 0 else w4)
+
+
+            stress = st.slider('Stress Level', 0, 10, avg_stress)
+            w1 = avg_weight+((stress_cor+(stress*0.2)))
+            st.write("Your Average Stress Level : ", avg_stress)
+            st.write("Your Average Weight : ", avg_weight)
+            st.write("New Weight : ", avg_weight if stress == avg_stress else w1)
+
+            a1  = round(avg_steps - (0.25*avg_steps))
+            a2 = round(avg_steps + (0.25*avg_steps))
+            steps = st.slider('Steps', a1, a2, avg_steps)
+
+            if(step_cor>0):
+                step_cor = -(step_cor)
+
+            if steps<avg_steps:
+                w2 = avg_weight-(steps*(-step_cor)*0.001)+4
+            else:
+                w2 = avg_weight+(steps*step_cor*0.001)
+
+            st.write("Your Average Steps : ", avg_steps)
+            st.write("Your Average Weight : ", avg_weight)
+            st.write("New Weight : ", avg_weight if steps == avg_steps else w2)
+            sleep = st.slider('Sleep', 0, 15, avg_sleep)
+            if(sleep_cor<0):
+                sleep_cor = -(sleep_cor)
+
+            if sleep<avg_sleep:
+                w3 = avg_weight-(sleep*(-sleep_cor)*0.01)-1
+            else:
+                w3 = avg_weight+(sleep*sleep_cor*0.01)
+
+            st.write("Your Average Sleep : ", avg_sleep)
+            st.write("Your Average Weight : ", avg_weight)
+            st.write("New Weight : ", avg_weight if sleep == avg_sleep else w3)
+            b1 = round(avg_calorie - (0.25*avg_calorie))
+            b2 = round(avg_calorie + (0.25*avg_calorie))
+            calorie = st.slider('Calorie', b1,b2, avg_calorie)
+            if(calorie_cor<0):
+                calorie_cor = -(calorie_cor)
+
+            if calorie<avg_calorie:
+                w4 = avg_weight-(calorie*(-calorie_cor)*0.001)-1
+            else:
+                w4 = avg_weight+(calorie*calorie_cor*0.001)
+
+            st.write("Your Average Calorie Intake : ", avg_calorie)
+            st.write("Your Average Weight : ", avg_weight)
+            st.write("New Weight : ", avg_weight if calorie == avg_calorie else w
   
         else:
             st.write("There is nothing to show!! Please add file to see data.")

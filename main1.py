@@ -174,7 +174,7 @@ def mainContent():
 
             st.write("Your Average Calorie Intake : ", avg_calorie)
             st.write("Your Average Weight : ", avg_weight)
-            st.write("New Weight : ", avg_weight if calorie == avg_calorie else w
+            st.write("New Weight : ", avg_weight if calorie == avg_calorie else w)
   
         else:
             st.write("There is nothing to show!! Please add file to see data.")

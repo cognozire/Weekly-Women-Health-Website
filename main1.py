@@ -108,6 +108,13 @@ def mainContent():
             # st.plotly_chart(fig)
             
         elif opt =="Slider":
+            disclaimer = """
+            **Disclaimer:**
+
+            The sliders are initially set to represent your average weight and average values. You can adjust them to observe how your weight changes. Please note that the new weight provided is an estimate, and users should consider it as such.
+            """
+
+            st.markdown(disclaimer)
             corr_coeffs = corr.corr()['Avg weight']
             corr_coeffs = corr_coeffs.to_frame()
 #             st.write(corr_coeffs)

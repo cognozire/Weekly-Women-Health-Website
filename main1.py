@@ -110,8 +110,6 @@ def mainContent():
         elif opt =="Slider":
             st.markdown('\n\n\n')
             disclaimer = """
-            **Disclaimer:**
-
             *The sliders are initially set to represent your average weight and average values. You can adjust them to observe how your weight changes. Please note that the new weight provided is an estimate, and users should consider it as such.*
             """
 

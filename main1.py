@@ -127,7 +127,7 @@ def mainContent():
             sleep_cor = corr_coeffs.at["Sleep hours", "Avg weight"]
             calorie_cor = corr_coeffs.at["Avg calorie", "Avg weight"]
 
-
+            st.write('\n\n')
             st.markdown("#### Stress Level")
             stress = st.slider('', 0, 10, avg_stress)
             w1 = avg_weight+((stress_cor+(stress*0.2)))
@@ -137,7 +137,10 @@ def mainContent():
 
             a1  = round(avg_steps - (0.25*avg_steps))
             a2 = round(avg_steps + (0.25*avg_steps))
-            steps = st.slider('Steps', a1, a2, avg_steps)
+            
+            st.write('\n\n')
+            st.markdown("#### Steps")
+            steps = st.slider('', a1, a2, avg_steps)
 
             if(step_cor>0):
                 step_cor = -(step_cor)
@@ -150,7 +153,10 @@ def mainContent():
             st.write("Your Average Steps : ", avg_steps)
             st.write("Your Average Weight : ", round(avg_weight,4))
             st.write("New Weight : ", round(avg_weight,4) if steps == avg_steps else round(w2,4))
-            sleep = st.slider('Sleep', 0, 15, avg_sleep)
+            
+            st.write('\n\n')
+            st.markdown("#### Sleep")
+            sleep = st.slider('', 0, 15, avg_sleep)
             if(sleep_cor<0):
                 sleep_cor = -(sleep_cor)
 
@@ -164,7 +170,10 @@ def mainContent():
             st.write("New Weight : ", round(avg_weight,4) if sleep == avg_sleep else round(w3,4))
             b1 = round(avg_calorie - (0.25*avg_calorie))
             b2 = round(avg_calorie + (0.25*avg_calorie))
-            calorie = st.slider('Calorie', b1,b2, avg_calorie)
+            
+            st.write('\n\n')
+            st.markdown("#### Calorie")
+            calorie = st.slider('', b1,b2, avg_calorie)
             if(calorie_cor<0):
                 calorie_cor = -(calorie_cor)
 

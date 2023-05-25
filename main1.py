@@ -128,7 +128,8 @@ def mainContent():
             calorie_cor = corr_coeffs.at["Avg calorie", "Avg weight"]
 
 
-            stress = st.slider('Stress Level', 0, 10, avg_stress)
+            st.markdown("#### Stress Level")
+            stress = st.slider('', 0, 10, avg_stress)
             w1 = avg_weight+((stress_cor+(stress*0.2)))
             st.write("Your Average Stress Level : ", avg_stress)
             st.write("Your Average Weight : ", round(avg_weight,4))

@@ -132,7 +132,7 @@ def mainContent():
             w1 = avg_weight+((stress_cor+(stress*0.2)))
             st.write("Your Average Stress Level : ", avg_stress)
             st.write("Your Average Weight : ", avg_weight)
-            st.write("New Weight : ", avg_weight if stress == avg_stress else w1)
+            st.write("New Weight : ", round(avg_weight,4) if stress == avg_stress else round(w1,4))
 
             a1  = round(avg_steps - (0.25*avg_steps))
             a2 = round(avg_steps + (0.25*avg_steps))
@@ -148,7 +148,7 @@ def mainContent():
 
             st.write("Your Average Steps : ", avg_steps)
             st.write("Your Average Weight : ", avg_weight)
-            st.write("New Weight : ", avg_weight if steps == avg_steps else w2)
+            st.write("New Weight : ", round(avg_weight,4) if steps == avg_steps else round(w2,4))
             sleep = st.slider('Sleep', 0, 15, avg_sleep)
             if(sleep_cor<0):
                 sleep_cor = -(sleep_cor)
@@ -160,7 +160,7 @@ def mainContent():
 
             st.write("Your Average Sleep : ", avg_sleep)
             st.write("Your Average Weight : ", avg_weight)
-            st.write("New Weight : ", avg_weight if sleep == avg_sleep else w3)
+            st.write("New Weight : ", round(avg_weight,4) if sleep == avg_sleep else round(w3,4))
             b1 = round(avg_calorie - (0.25*avg_calorie))
             b2 = round(avg_calorie + (0.25*avg_calorie))
             calorie = st.slider('Calorie', b1,b2, avg_calorie)
@@ -174,7 +174,7 @@ def mainContent():
 
             st.write("Your Average Calorie Intake : ", avg_calorie)
             st.write("Your Average Weight : ", avg_weight)
-            st.write("New Weight : ", avg_weight if calorie == avg_calorie else w4)
+            st.write("New Weight : ", round(avg_weight,4) if calorie == avg_calorie else round(w4,4))
   
         else:
             st.write("There is nothing to show!! Please add file to see data.")

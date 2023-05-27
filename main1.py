@@ -184,7 +184,7 @@ def mainContent():
                 calorie_cor = -(calorie_cor)
 
             if calorie<avg_calorie:
-                w4 = avg_weight-(calorie*(-calorie_cor)*0.01)-1
+                w4 = avg_weight-(calorie*(-calorie_cor)*0.001)-1
             else:
                 w4 = avg_weight+(calorie*calorie_cor*0.01)
 

@@ -186,7 +186,7 @@ def mainContent():
             if calorie<avg_calorie:
                 w4 = avg_weight-(calorie*(-calorie_cor)*0.01)-1
             else:
-                w4 = avg_weight+(calorie*calorie_cor*0.01)
+                w4 = avg_weight+(calorie*calorie_cor*0.1)
 
             st.write("Your Average Calorie Intake : ", avg_calorie)
             st.write("Your Average Weight : ", round(avg_weight,4))

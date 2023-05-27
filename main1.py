@@ -77,7 +77,7 @@ def mainContent():
        'Users all menstrual cycles type']]
         mean_weight_all = df_o['Avg weight'].mean(skipna=True)
         df_o['Avg weight'].fillna(mean_weight_all, inplace=True)
-        corr = df_o.drop(['Height', 'Gender','Age','Regular cycle', 'No cycle', 'Calorie target', 'Carb accuracy', 'On birth control', 'Protein target', 'Carbs target', 'Fat target','Calorie accuracy', 'Average maintenance calories (for the week)', 'Total maintenance calories for week', 'Estimated fat loss per week', 'Users all menstrual cycles type'],axis = 1).corr(method='pearson')
+        corr = df_o.drop(['Height', 'Gender','Age','Regular cycle', 'No cycle','Total calorie deficit per week', 'Calorie target', 'Carb accuracy', 'On birth control', 'Protein target', 'Carbs target', 'Fat target','Calorie accuracy', 'Average maintenance calories (for the week)', 'Total maintenance calories for week', 'Estimated fat loss per week', 'Users all menstrual cycles type'],axis = 1).corr(method='pearson')
         corr['index'] = corr.index
         df = df_o[["Avg weight"]]
         model = ARIMA(df['Avg weight'],order = (2,1,2))
